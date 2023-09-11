@@ -1,56 +1,49 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.0'
+ruby '3.1.3'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
-# Use postgres as the database for Active Record
-gem 'pg', '~> 1.3'
-# Use Puma as the app server
+# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem 'rails', '~> 7.0.8'
+
+# The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
+gem 'sprockets-rails'
+
+# Use postgresql as the database for Active Record
+gem 'pg', '~> 1.1'
+
+# Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
-# Use SCSS for stylesheets
-gem 'sass-rails', '>= 6'
-# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 5.0'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.7'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
-# Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
-# Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
-
-# Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.4', require: false
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem 'debug', platforms: %i[mri mingw x64_mingw]
 end
 
 group :development do
-  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 4.1.0'
-  # Display performance information such as SQL time and flame graphs for each request in your browser.
-  # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
-  gem 'rack-mini-profiler', '~> 2.0'
-  gem 'listen', '~> 3.3'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
+  # gem "spring"
+
+  # Lookbook: for previewing view components in development. Uses action cable and listen for live-auto-update
+  gem 'actioncable'
+  gem 'listen'
+  gem 'lookbook', '>= 2.0.5'
+
+  # Annotate models with schema definitions
+  gem 'annotate'
+
+  # Make sure rubocop is running
+  # https://ruby-style-guide.shopify.dev
+  gem 'rubocop', require: false
+  gem 'rubocop-shopify', require: false
 end
 
-group :test do
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 3.26'
-  gem 'selenium-webdriver'
-  # Easy installation and use of web drivers to run system tests with browsers
-  gem 'webdrivers'
-end
+# Allows managing multiple processes in one terminal, required for running the
+# tailwindcss build process at the same time as the rails server.
+gem 'foreman', '~> 0.87.2'
+gem 'tailwindcss-rails', '~> 2.0'
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'view_component', '~> 3.5'
