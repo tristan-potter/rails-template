@@ -1,25 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A minimal Rails template that uses Tailwind and ViewComponent for the frontend
+and a PostgreSQL database. Should work out of the box with Heroku.
 
-Things you may want to cover:
+Run `.bin/setup.sh` to get started, and then `.bin/dev` to run the server.
 
-- Ruby version
+After cloning this repo, you should change instances of `rails_template`,
+`RailsTemplate` and `RAILS_TEMPLATE` to your app name.
 
-- System dependencies
-
-- Configuration
-
-- Database creation
-
-- Database initialization
-
-- How to run the test suite
-
-- Services (job queues, cache servers, search engines, etc.)
-
-- Deployment instructions
+## Deployment instructions
 
 To create a Heroku app:
 
@@ -34,5 +23,3 @@ Push the app to Heroku to deploy: `git push heroku main`
 Migrate the database: `heroku run rake db:migrate`
 
 Can check usage using: `heroku ps`
-
-- ...
