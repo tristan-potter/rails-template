@@ -47,3 +47,5 @@ gem 'foreman', '~> 0.87.2'
 gem 'tailwindcss-rails', '~> 2.0'
 
 gem 'view_component', '~> 3.5'
+
+gem "importmap-rails", "~> 1.2"
