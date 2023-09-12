@@ -222,6 +222,8 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    stimulus-rails (1.2.2)
+      railties (>= 6.0.0)
     stringio (3.0.8)
     tailwindcss-rails (2.0.30)
       railties (>= 6.0.0)
@@ -229,6 +231,10 @@ GEM
       railties (>= 6.0.0)
     thor (1.2.2)
     timeout (0.4.0)
+    turbo-rails (1.4.0)
+      actionpack (>= 6.0.0)
+      activejob (>= 6.0.0)
+      railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.4.2)
@@ -251,7 +257,7 @@ DEPENDENCIES
   annotate
   debug
   foreman (~> 0.87.2)
-  importmap-rails (~> 1.2)
+  importmap-rails
   listen
   lookbook (>= 2.0.5)
   pg (~> 1.1)
@@ -260,7 +266,9 @@ DEPENDENCIES
   rubocop
   rubocop-shopify
   sprockets-rails
+  stimulus-rails
   tailwindcss-rails (~> 2.0)
+  turbo-rails
   tzinfo-data
   view_component (~> 3.5)
 
